@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>HandTracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>HandTracker</h1>
+        <p>Real-time finger movement analysis</p>
+    </header>
+
+    <main>
+
+        <div class="dashboard">
+
+            <section class="camera-panel">
+
+                <div class="camera-container">
+                    <video id="webcam"
+                           autoplay playsinline muted></video>
+                    <canvas id="canvas"></canvas>
+                </div>
+
+                <p id="status">Camera is disabled</p>
+
+                <div class="controls">
+                    <button id="start">Start camera</button>
+                    <button id="stop" disabled>Stop camera</button>
+                </div>
+
+            </section>
+
+            <section class="data-panel">
+
+                <h2>Finger bending</h2>
+
+                <div id="fingers"></div>
+
+                <h3>Continuous finger values</h3>
+
+                <pre id="values">[0, 0, 0, 0, 0]</pre>
+
+                <p class="note">
+                    Values range from 0% (straight)
+                    to 100% (strongly bent).
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        Built using MediaPipe Hand Landmarker.
+        Webcam processing happens on your device.
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
